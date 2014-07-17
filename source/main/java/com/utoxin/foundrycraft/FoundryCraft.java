@@ -1,6 +1,8 @@
 package com.utoxin.foundrycraft;
 
 import com.utoxin.foundrycraft.handler.ConfigurationHandler;
+import com.utoxin.foundrycraft.init.ModBlocks;
+import com.utoxin.foundrycraft.init.ModItems;
 import com.utoxin.foundrycraft.proxy.IProxy;
 import com.utoxin.foundrycraft.reference.Reference;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -21,6 +23,9 @@ public class FoundryCraft {
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+
+		ModItems.init();
+		ModBlocks.init();
 	}
 
 	@Mod.EventHandler
